@@ -17,10 +17,9 @@ export default function createDreamTeam(members) {
   return Array.isArray(members) ? members.map(function (element) {
     if (typeof (element) === 'string') {
       element = element.trim();
-    console.log(element);
-    return element[0]
-    }
     
-    }).sort().join('').toUpperCase() : false;
+    return element[0].toUpperCase()
+    }
+  }).sort().join('') : false;
   
 }
