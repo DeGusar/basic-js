@@ -1,3 +1,4 @@
+//import { replace } from 'sinon';
 import { NotImplementedError } from '../extensions/index.js';
 
 /**
@@ -10,7 +11,19 @@ import { NotImplementedError } from '../extensions/index.js';
  * For aabbbc should return 2a3bc
  *
  */
-export default function encodeLine(/* str */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+export default function encodeLine(str) {
+  let count = 1;
+  let result = [];
+  for (let i = 0; i < str.length; i++){
+    if (str[i] === str[i + 1]) {
+      count++;
+    } else {
+      result.push(count, str[i]);
+      count = 1;
+    }
+  }
+  let res = result.filter(a => a != 1);
+  return res.join('');
+  
+  
 }
