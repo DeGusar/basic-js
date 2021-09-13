@@ -19,6 +19,8 @@ export default function encodeLine(str) {
       count++;
     } else {
       result.push(count, str[i]);
+      
+     
       count = 1;
     }
   }

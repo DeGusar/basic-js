@@ -12,7 +12,15 @@ import { NotImplementedError } from '../extensions/index.js';
  * 
  */
 export default function getSeason(date) {
-  
+  if (typeof (date) === 'undefined') {
+    
+    return 'Unable to determine the time of year!';
+  };
+  try {
+    date.getTime();
+  } catch (error) {
+    throw new Error('Invalid date!');
+   }
   if (date && Object.prototype.toString.call(date) === "[object Date]" && !isNaN(date)) {
     let month = date.getMonth();
     if (month > 1 && month < 5) {
@@ -23,11 +31,5 @@ export default function getSeason(date) {
       return 'autumn'
     } else return 'winter'
 
-  } else if (typeof(date)=== 'undefined') {
-    console.log('undefined', date)
-     return 'Unable to determine the time of year!';
-  } else {
-    console.log(date, 'other');
-    throw new Error("Invalid date!");
   }
 }
