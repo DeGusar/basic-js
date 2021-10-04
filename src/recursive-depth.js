@@ -15,9 +15,24 @@ import { NotImplementedError } from '../extensions/index.js';
 export default class DepthCalculator {
   
   calculateDepth(arr) {
-    
+    let depth = 0;
+    if (Array.isArray(arr)) {
+      ++depth
+      for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+          arr = arr.flat()
+          calculateDepth(arr)
+        }
+      }
+      return depth;
+    }
  
-    
+  
+
+ 
+
+
+
+    /* npm run test -- test/recursive-depth.test.js */
   }
- 
 }
