@@ -13,10 +13,11 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default class DepthCalculator {
+  
   calculateDepth(arr) {
-   
     
-  
+ 
+    
   }
-  
+ 
 }
