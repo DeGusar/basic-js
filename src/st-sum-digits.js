@@ -13,16 +13,9 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function getSumOfDigits(n) {
- /*  let arr = Array.from(String(n), Number);
-  let sum = arr.reduce((a, b) => a + b);
-  return sum < 10 ? sum : getSumOfDigits(sum); */
   let arr = Array.from(String(n), Number);
-  let sum = 0;
-  while (sum >10 ) {
-    for (let i = 0; i < arr.length; i++){
-      sum += arr[i];
-    }
-    arr = Array.from(String(sum), Number);
-  }
-  
+  let sum = arr.reduce((a, b) => a + b);
+   if (sum>9) {
+   return getSumOfDigits(sum);
+    } else return sum;
 }
