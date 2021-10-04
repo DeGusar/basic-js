@@ -20,12 +20,11 @@ import { NotImplementedError } from '../extensions/index.js';
  * 
  */
 export default class VigenereCipheringMachine {
-  encrypt() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  encrypt(message,key) {
+   if (!message || !key )  throw new Error("Incorrect arguments!")
   }
-  decrypt() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  decrypt(encryptedMessage, key) {
+    if (!encryptedMessage|| !key )  throw new Error("Incorrect arguments!")
   }
 }
+/* npm run test -- test/vigenere-cipher.test.js */
